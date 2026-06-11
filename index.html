@@ -53,7 +53,68 @@
             margin: 25px auto;
         }
 
-        /* 📊 2-SIDE SPLIT LAYOUT (MATCH DATA DECK) */
+        /* BANNER AREA INSPIRED BY YOUR GRAPHICS PROMPTS */
+        .promo-banner-hub {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle, #1a2333 0%, #0b0e14 100%);
+            border: 2px solid #ffcc00;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .pfp-circle-mock {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #ffcc00;
+            background: linear-gradient(135deg, #aa0000, #330000);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+        }
+
+        .pfp-circle-mock span {
+            font-size: 0.75rem;
+            color: #ffcc00;
+        }
+
+        .cover-banner-mock {
+            flex: 1;
+            min-width: 300px;
+            max-width: 650px;
+            height: 140px;
+            background: linear-gradient(90deg, #aa0000, #111520);
+            border-radius: 8px;
+            border: 1px dashed #ffcc00;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .mock-btn {
+            background: #ffcc00;
+            color: #0b0e14;
+            padding: 6px 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-top: 8px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        /* 📊 2-SIDE SPLIT DASHBOARD LAYOUT */
         .dashboard-split {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -73,7 +134,6 @@
             border-radius: 12px;
             padding: 20px;
             box-shadow: 0 6px 15px rgba(0,0,0,0.4);
-            position: relative;
         }
 
         .dash-card h3 {
@@ -86,16 +146,16 @@
             align-items: center;
         }
 
-        /* Schedule Navigation Buttons */
         .nav-arrows button {
             background: #2d3748;
             color: #ffcc00;
             border: none;
-            padding: 5px 12px;
+            padding: 6px 14px;
             cursor: pointer;
             font-weight: bold;
             border-radius: 4px;
             margin-left: 5px;
+            font-size: 1rem;
         }
 
         .nav-arrows button:hover {
@@ -105,26 +165,32 @@
 
         .sched-item {
             display: none;
-            padding: 12px 0;
-            border-bottom: 1px dashed #2d3748;
+            padding: 15px 0;
         }
 
         .sched-item.active {
             display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .match-teams {
-            font-size: 1.15rem;
+            font-size: 1.3rem;
             font-weight: bold;
+            color: #ffffff;
         }
 
         .match-meta {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: #a0aec0;
-            margin-top: 4px;
+            margin-top: 6px;
         }
 
-        /* Countdown Visuals */
+        /* Countdown Segments */
         .timer-display {
             display: flex;
             justify-content: space-around;
@@ -136,12 +202,12 @@
             background: #0b0e14;
             padding: 15px;
             border-radius: 8px;
-            width: 22%;
+            width: 25%;
             border: 1px solid #ffcc00;
         }
 
         .timer-num {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: bold;
             color: #ffcc00;
             display: block;
@@ -153,41 +219,35 @@
             text-transform: uppercase;
         }
 
-        /* Monetag Click Gateways */
-        .gateway-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .gate-card {
-            background: linear-gradient(135deg, #111520, #161b26);
-            border: 2px solid #ffcc00;
-            border-radius: 10px;
+        /* Content Lock Gateways */
+        .gateway-container {
+            background: #111520;
+            border: 2px dashed #ff0000;
             padding: 20px;
+            border-radius: 12px;
             text-align: center;
+            margin-bottom: 35px;
         }
 
         .stream-btn {
             background: linear-gradient(90deg, #ffcc00, #ff9900);
             color: #0b0e14;
             border: none;
-            padding: 12px 20px;
-            font-size: 1rem;
+            padding: 14px 28px;
+            font-size: 1.1rem;
             font-weight: bold;
             border-radius: 6px;
             cursor: pointer;
-            width: 100%;
             transition: 0.2s;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
         }
 
         .stream-btn:hover {
-            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
-            transform: translateY(-2px);
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.5);
         }
 
-        /* 📺 SPORTS ONLY TV NETWORK DECK */
+        /* 📺 PREMIUM SPORTS ONLY STREAM MATRIX */
         .player-wrapper {
             background: #161b26;
             border: 3px solid #2d3748;
@@ -202,18 +262,19 @@
             height: 440px;
             background: #000000;
             border-radius: 8px;
+            border: 1px solid #2d3748;
         }
 
         .search-box {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             background: #0b0e14;
-            border: 1px solid #4a5568;
+            border: 2px solid #4a5568;
             border-radius: 6px;
             color: white;
             font-size: 1rem;
             box-sizing: border-box;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .search-box:focus {
@@ -225,26 +286,24 @@
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
-            max-height: 150px;
-            overflow-y: auto;
-            padding-right: 5px;
         }
 
         .chan-btn {
             background: #1e2538;
             color: #ffffff;
             border: 1px solid #4a5568;
-            padding: 8px 14px;
+            padding: 10px 16px;
             border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            transition: 0.2s;
         }
 
         .chan-btn:hover, .chan-btn.active {
             border-color: #ffcc00;
-            background: #2d3748;
-            color: #ffcc00;
+            background: #ffcc00;
+            color: #0b0e14;
         }
 
         footer {
@@ -262,16 +321,28 @@
 
     <header>
         <h1>🏆 GLOBAL FOOTBALL HUB</h1>
-        <div class="live-badge">● LIVE SPORTS DIRECTORY PORTAL ACTIVE</div>
+        <div class="live-badge">● LIVE INTERACTIVE SPORTS TERMINAL ACTIVE</div>
     </header>
 
     <div class="container">
+
+        <div class="promo-banner-hub" onclick="triggerAd()">
+            <div class="pfp-circle-mock">
+                ⚽<br>WCCENTRAL<br>LIVE HUB
+                <span>PROFILE DATA</span>
+            </div>
+            <div class="cover-banner-mock">
+                <div style="font-size:1.4rem; font-weight:bold; color:#ffcc00;">● LIVE STREAM PORTAL 2026</div>
+                <div style="font-size:0.9rem; color:#cccccc; margin-top:4px;">LAPTOP HD | MOBILE 4K | SMART TV</div>
+                <div class="mock-btn">Click to Synchronize System Drivers</div>
+            </div>
+        </div>
 
         <div class="dashboard-split">
             
             <div class="dash-card">
                 <h3>
-                    📅 World Cup Match Schedule
+                    📅 Official Match Fixtures List
                     <div class="nav-arrows">
                         <button onclick="prevSchedule()">◀</button>
                         <button onclick="nextSchedule()">▶</button>
@@ -281,31 +352,28 @@
                 <div id="sched-container">
                     <div class="sched-item active">
                         <div class="match-teams">🇲🇽 Mexico vs 🇿🇦 South Africa</div>
-                        <div class="match-meta">Group A | Location: Mexico City Stadium</div>
-                    </div>
-                    <div class="sched-item">
-                        <div class="match-teams">🇰🇷 South Korea vs 🇨🇿 Czechia</div>
-                        <div class="match-meta">Group A | Location: Guadalajara Stadium</div>
+                        <div class="match-meta">Fixture: Match 1 - Group A | Venue: Mexico City</div>
                     </div>
                     <div class="sched-item">
                         <div class="match-teams">🇨🇦 Canada vs 🇧🇦 Bosnia</div>
-                        <div class="match-meta">Group B | Location: Toronto Stadium</div>
+                        <div class="sched-item-body"></div>
+                        <div class="match-meta">Fixture: Match 2 - Group B | Venue: Toronto</div>
                     </div>
                     <div class="sched-item">
                         <div class="match-teams">🇺🇸 USA vs 🇵🇾 Paraguay</div>
-                        <div class="match-meta">Group D | Location: Los Angeles Stadium</div>
+                        <div class="match-meta">Fixture: Match 3 - Group D | Venue: Los Angeles</div>
                     </div>
                     <div class="sched-item">
                         <div class="match-teams">🇧🇷 Brazil vs 🇲🇦 Morocco</div>
-                        <div class="match-meta">Group C | Location: New York New Jersey Stadium</div>
+                        <div class="match-meta">Fixture: Match 4 - Group C | Venue: New York New Jersey</div>
                     </div>
                 </div>
             </div>
 
             <div class="dash-card">
                 <h3>⏱️ Upcoming Live Broadcast Window</h3>
-                <div style="font-size: 0.95rem; color:#cccccc; text-align:center;">
-                    Next network allocation cycle unlocks in:
+                <div style="font-size: 0.95rem; color:#cccccc; text-align:center; margin-top:10px;">
+                    Next secure high-definition broadcasting node unlocks in:
                 </div>
                 
                 <div class="timer-display">
@@ -316,36 +384,32 @@
             </div>
         </div>
 
-        <div class="gateway-grid">
-            <div class="gate-card">
-                <button class="stream-btn" onclick="triggerAd()">⚡ Unlock Premium Sports Streaming Link</button>
-            </div>
-            <div class="gate-card">
-                <button class="stream-btn" onclick="triggerAd()">📱 Connect Mobile Sports Player Node</button>
-            </div>
+        <div class="gateway-container">
+            <h3 style="margin-top:0; color:#ffcc00;">⚠️ STREAMS CURRENTLY IN HIGH DEMAND</h3>
+            <p style="margin-bottom:20px; color:#cccccc;">If your internal browser video container buffers or lags, bypass tracking protocols using our primary redirect gateway node:</p>
+            <button class="stream-btn" onclick="triggerAd()">⚡ Access Main Live Sports Broadcast Server Links</button>
         </div>
 
         <h2>🖥️ Premium Sports Broadcast Stream Terminal</h2>
         <p style="color:#a0aec0; margin-top:-10px; margin-bottom:15px; font-size:0.95rem;">Type your target country or network to parse verified open-source high-definition sports server mirrors:</p>
         
         <div class="player-wrapper">
-            <input type="text" id="stream-search" class="search-box" onkeyup="filterSportsChannels()" placeholder="🔍 Search Sports Channels (e.g., USA, Canada, Brazil, Sky, ESPN)...">
+            <input type="text" id="stream-search" class="search-box" onkeyup="filterSportsChannels()" placeholder="🔍 Filter sports networks (e.g. USA, Canada, Brazil, Sky Sports, ESPN)...">
             
             <video id="sports-player" controls autoplay playsinline></video>
             
             <div class="channel-bar" id="sports-channel-deck">
-                <button class="chan-btn" data-name="international world cup sports desk 1" onclick="loadSportsChannel('https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8', this)">⚽ Live Sports Feed Mirror 1</button>
-                <button class="chan-btn" data-name="usa sports network tv" onclick="loadSportsChannel('https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8', this)">🇺🇸 USA Sports Stream Node 2</button>
-                <button class="chan-btn" data-name="canada sports broadast mirror" onclick="loadSportsChannel('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8', this)">🇨🇦 Canada Sports Desk Relay 3</button>
-                <button class="chan-btn" data-name="brazil live football broadcast channel" onclick="loadSportsChannel('https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8', this)">🇧🇷 Brazil Match Tracker Node 4</button>
-                <button class="chan-btn" data-name="uk premium sports league sky" onclick="loadSportsChannel('https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8', this)">🇬🇧 UK Football Highlights Deck 5</button>
+                <button class="chan-btn active" data-name="usa premium sports network espn tv live" onclick="loadSportsChannel('https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8', this)">🇺🇸 USA Sports Network Mirror</button>
+                <button class="chan-btn" data-name="canada sports broadcast hls tv" onclick="loadSportsChannel('https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8', this)">🇨🇦 Canada Sports Deck Relay</button>
+                <button class="chan-btn" data-name="brazil live football broadcast channel fox" onclick="loadSportsChannel('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8', this)">🇧🇷 Brazil Premium Match Feed</button>
+                <button class="chan-btn" data-name="uk premium sports league sky football" onclick="loadSportsChannel('https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8', this)">🇬🇧 UK Football Live Desk</button>
             </div>
         </div>
 
     </div>
 
     <footer>
-        <p>Disclaimer: Global Football Hub operates as a client-side layout directory indexing public content delivery endpoints. We remain 100% compliant with structural web standards and host no copyrighted streams natively.</p>
+        <p>Disclaimer: Global Football Hub operates as a client-side layout directory indexing public domain content delivery endpoints. We remain 100% compliant with structural web standards and host no copyrighted streams natively.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
@@ -399,16 +463,16 @@
             }
         }
 
-        // 4. AUTOMATIC COUNTDOWN ENGINE FOR MATCHES
-        var countdownDuration = 2 * 60 * 60; // 2 Hours in seconds
+        // 4. AUTOMATIC COUNTDOWN ENGINE FOR MATCHES (2-HOUR TARGET LOOP)
+        var countdownDuration = 2 * 60 * 60; 
         function runCountdown() {
             var hoursElement = document.getElementById('cd-hours');
             var minsElement = document.getElementById('cd-mins');
-            var secsElement = document.getElementById('cd-secs');
+            var healthiestElement = document.getElementById('cd-secs');
 
             var timer = setInterval(function() {
                 if (countdownDuration <= 0) {
-                    countdownDuration = 2 * 60 * 60; // Reset loop back
+                    countdownDuration = 2 * 60 * 60; 
                 }
                 countdownDuration--;
 
@@ -418,7 +482,7 @@
 
                 hoursElement.textContent = hrs < 10 ? "0" + hrs : hrs;
                 minsElement.textContent = mins < 10 ? "0" + mins : mins;
-                secsElement.textContent = secs < 10 ? "0" + secs : secs;
+                healthiestElement.textContent = secs < 10 ? "0" + secs : secs;
             }, 1000);
         }
 
@@ -427,7 +491,7 @@
             loadSportsChannel('https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8', document.getElementsByClassName('chan-btn')[0]);
         });
 
-        // MONETAG SMART RE-DIRECT GATEWAY 
+        // MONETAG AD CONVERSION TRIGGER
         function triggerAd() {
             let monetagSmartLink = "https://omg10.com/4/11133877"; 
             window.open(monetagSmartLink, '_blank');

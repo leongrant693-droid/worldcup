@@ -16,29 +16,88 @@
         header {
             background: linear-gradient(180deg, #aa0000, #660000);
             width: 100%;
-            padding: 20px 0;
+            padding: 15px 0;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            border-bottom: 3px solid #ffcc00;
+            border-bottom: 2px solid #ffcc00;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: #ffffff;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        /* 🏆 THE LIVE MATCH TICKER BAR (EXACTLY LIKE THE VIDEO) */
+        .ticker-wrap {
+            width: 100%;
+            background-color: #1a202c;
+            border-bottom: 2px solid #2d3748;
+            overflow: hidden; /* Hides the items outside the screen box */
+            box-sizing: border-box;
+            padding: 10px 0;
+        }
+
+        .ticker-move {
+            display: flex;
+            width: max-content;
+            animation: ticker-scroll 25s linear infinite; /* Loops the movement endlessly */
+        }
+
+        /* Pause scrolling when user hovers mouse over a score card */
+        .ticker-move:hover {
+            animation-play-state: paused;
+        }
+
+        .ticker-card {
+            display: flex;
+            align-items: center;
+            background: #0b0e14;
+            padding: 6px 16px;
+            margin-right: 15px;
+            border-radius: 6px;
+            border: 1px solid #4a5568;
+            font-size: 0.9rem;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .ticker-card .live-dot {
+            color: #ff0000;
+            margin-right: 8px;
+            animation: blink 1.2s infinite;
+        }
+
+        .ticker-card .score {
+            color: #ffcc00;
+            margin: 0 10px;
+            background: #2d3748;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .ticker-card .time {
+            color: #a0aec0;
+            font-size: 0.8rem;
+            margin-left: 8px;
+        }
+
+        @keyframes ticker-scroll {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); } /* Seamless loop shift reset */
         }
 
         .live-badge {
             background-color: #ff0000;
             color: white;
-            padding: 4px 12px;
+            padding: 3px 10px;
             border-radius: 4px;
             font-weight: bold;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             animation: blink 1.5s infinite;
             display: inline-block;
-            margin-top: 6px;
+            margin-top: 4px;
         }
 
         @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
@@ -97,7 +156,6 @@
         .match-teams { font-size: 1.3rem; font-weight: bold; color: #ffffff; }
         .match-meta { font-size: 0.9rem; color: #a0aec0; margin-top: 6px; }
 
-        /* Countdown display framework */
         .timer-display {
             display: flex;
             justify-content: space-around;
@@ -116,7 +174,7 @@
         .timer-num { font-size: 2.2rem; font-weight: bold; color: #ffcc00; display: block; }
         .timer-lbl { font-size: 0.75rem; color: #a0aec0; text-transform: uppercase; }
 
-        /* 📺 THE SPORTS INTERFACE FAKE PLAYER DECK */
+        /* 📺 SPORTS INTERFACE FAKE PLAYER DECK */
         .player-wrapper {
             background: #161b26;
             border: 3px solid #ffcc00;
@@ -188,7 +246,6 @@
             color: #0b0e14;
         }
 
-        /* Floating Monetag Ad overlay window */
         .ad-modal-overlay {
             display: none;
             position: absolute;
@@ -232,8 +289,23 @@
 
     <header>
         <h1>🏆 GLOBAL FOOTBALL HUB</h1>
-        <div class="live-badge">● LIVE FIFA WORLD CUP SPORTS DIRECTORY STREAMING</div>
+        <div class="live-badge">● LIVE TRANSMISSION INTERFACE ACTIVE</div>
     </header>
+
+    <div class="ticker-wrap">
+        <div class="ticker-move">
+            <div class="ticker-card"><span class="live-dot">●</span>🇲🇽 MEX <span class="score">1 - 0</span>🇿🇦 RSA <span class="time">72' Live</span></div>
+            <div class="ticker-card">🇨🇦 CAN vs 🇧🇦 BIH <span class="time">23:00 Match 2</span></div>
+            <div class="ticker-card">🇺🇸 USA vs 🇵🇾 PAR <span class="time">Tomorrow</span></div>
+            <div class="ticker-card">🇧🇷 BRA vs 🇲🇦 MAR <span class="time">June 13</span></div>
+            <div class="ticker-card">🇰🇷 KOR vs 🇨🇿 CZE <span class="time">June 13</span></div>
+            <div class="ticker-card"><span class="live-dot">●</span>🇲🇽 MEX <span class="score">1 - 0</span>🇿🇦 RSA <span class="time">72' Live</span></div>
+            <div class="ticker-card">🇨🇦 CAN vs 🇧🇦 BIH <span class="time">23:00 Match 2</span></div>
+            <div class="ticker-card">🇺🇸 USA vs 🇵🇾 PAR <span class="time">Tomorrow</span></div>
+            <div class="ticker-card">🇧🇷 BRA vs 🇲🇦 MAR <span class="time">June 13</span></div>
+            <div class="ticker-card">🇰🇷 KOR vs 🇨🇿 CZE <span class="time">June 13</span></div>
+        </div>
+    </div>
 
     <div class="container">
 
@@ -360,7 +432,7 @@
         }
 
         function closeModal(event) {
-            event.stopPropagation(); // Stops click from triggering ad again
+            event.stopPropagation();
             document.getElementById('ad-gate-modal').style.display = "none";
         }
 

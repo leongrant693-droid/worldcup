@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Football Hub - World Cup 2026 Interactive Broadcast Center</title>
+    <title>Global Football Hub - FIFA World Cup 2026 Live Portal</title>
     <style>
         body {
             background-color: #0b0e14;
@@ -73,7 +73,7 @@
             line-height: 1.6;
         }
 
-        /* Streaming Gateways */
+        /* Monetag Click Gateways */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -108,22 +108,47 @@
             box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
         }
 
-        /* Interactive Live Frame Engine */
-        .terminal-box {
-            width: 100%;
-            height: 600px;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 3px solid #2d3748;
+        /* 📺 CUSTOM NATIVE TV INTERFACE */
+        .player-wrapper {
             background: #161b26;
-            margin-bottom: 40px;
+            border: 3px solid #2d3748;
+            border-radius: 12px;
+            padding: 15px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            margin-bottom: 40px;
         }
 
-        .terminal-box iframe {
+        video {
             width: 100%;
-            height: 100%;
-            border: none;
+            height: 480px;
+            background: #000000;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .channel-bar {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .chan-btn {
+            background: #1e2538;
+            color: #ffffff;
+            border: 1px solid #4a5568;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+
+        .chan-btn:hover {
+            border-color: #ffcc00;
+            background: #2d3748;
+            color: #ffcc00;
         }
 
         /* Stats Grid */
@@ -149,6 +174,47 @@
             color: #ffcc00;
         }
 
+        /* Professional Data Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: #161b26;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #2d3748;
+        }
+
+        th {
+            background-color: #1e2538;
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .record-box {
+            background: #161b26;
+            border-left: 4px solid #ff0000;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .record-box strong {
+            color: #ffcc00;
+            font-size: 1.1rem;
+        }
+
+        .record-box p {
+            margin: 5px 0 0 0;
+            color: #cccccc;
+            font-size: 0.95rem;
+        }
+
         footer {
             margin-top: 60px;
             padding: 25px;
@@ -165,11 +231,11 @@
 
     <header>
         <h1>🏆 GLOBAL FOOTBALL HUB</h1>
-        <div class="live-badge">● LIVE INTERACTIVE BROADCAST CONSOLE ACTIVE</div>
+        <div class="live-badge">● LIVE INTERACTIVE MEDIA CENTER ONLINE</div>
     </header>
 
     <div class="container">
-        <p class="intro-text">Welcome to the complete interactive multi-media interface. Configure your network drivers via our streaming option cards or use the integrated system terminal console to lock into live broadcast audio relays.</p>
+        <p class="intro-text">Welcome to the complete multimedia sports data matrix. Use our device connection profiles to synchronize your hardware accelerators, or access the active streaming player module directly below.</p>
 
         <h2>📡 Live Streaming Optimization Gateways</h2>
         <div class="grid">
@@ -190,35 +256,130 @@
             </div>
         </div>
 
-        <h2>📺 Live Terminal Broadcast Console</h2>
-        <p class="intro-text" style="text-align: left; font-size: 1rem; margin-bottom: 15px;">Interact with the live international data map below to test signal configuration arrays across various global regions:</p>
+        <h2>🖥️ Live Terminal Broadcast Stream Box</h2>
+        <p class="intro-text" style="text-align: left; font-size: 1rem; margin-bottom: 15px;">Select your preferred directory transmission relay link below to load a live audio/video feed node directly into your secure window browser:</p>
         
-        <div class="terminal-box">
-            <iframe src="https://famelack.com/tv/is" allowfullscreen></iframe>
+        <div class="player-wrapper">
+            <video id="football-player" controls autoplay playsinline></video>
+            
+            <div class="channel-bar">
+                <button class="chan-btn" onclick="loadChannel('https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8')">⚽ International Sports Feed 1</button>
+                <button class="chan-btn" onclick="loadChannel('https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8')">📡 Network Matrix Mirror 2</button>
+                <button class="chan-btn" onclick="loadChannel('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8')">🌎 Global Broadcast Desk 3</button>
+            </div>
         </div>
 
-        <h2>📊 FIFA World Cup 2026 Overview</h2>
+        <h2>📊 FIFA World Cup 2026 Official Tournament Overview</h2>
         <div class="stats-grid">
             <div class="stat-card">
+                <h4>Total Competing Countries</h4>
                 <p>48 Nations</p>
             </div>
             <div class="stat-card">
+                <h4>Host Countries</h4>
                 <p>USA, Canada, Mexico</p>
             </div>
             <div class="stat-card">
+                <h4>Total Scheduled Matches</h4>
                 <p>104 Matches</p>
             </div>
         </div>
 
+        <h2>⭐ Historic Team Leaderboard (All-Time Totals)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Total Cups Won</th>
+                    <th>World Cup Apperances</th>
+                    <th>Historical Win Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Brazil</strong></td>
+                    <td>5 Times</td>
+                    <td>22 Tournaments</td>
+                    <td>64% Win Metric</td>
+                </tr>
+                <tr>
+                    <td><strong>Germany</strong></td>
+                    <td>4 Times</td>
+                    <td>20 Tournaments</td>
+                    <td>60% Win Metric</td>
+                </tr>
+                <tr>
+                    <td><strong>Argentina</strong></td>
+                    <td>3 Times</td>
+                    <td>18 Tournaments</td>
+                    <td>54% Win Metric</td>
+                </tr>
+                <tr>
+                    <td><strong>France</strong></td>
+                    <td>2 Times</td>
+                    <td>16 Tournaments</td>
+                    <td>52% Win Metric</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>👑 Unbreakable World Cup Records & Legends</h2>
+        
+        <div class="record-box">
+            <strong>⚽ All-Time Highest Goalscorer: Miroslav Klose (Germany)</strong>
+            <p>Scored a total of 16 goals across 4 distinct World Cup final brackets (2002-2014).</p>
+        </div>
+
+        <div class="record-box">
+            <strong>🏆 The Three-Time King: Pelé (Brazil)</strong>
+            <p>The only athlete to capture 3 separate FIFA World Cup champion medals as an active player.</p>
+        </div>
+
+        <div class="record-box">
+            <strong>🔥 Single Tournament Goal Freak: Just Fontaine (France)</strong>
+            <p>Smashed a world record 13 goals in just one single tournament timeline in 1958.</p>
+        </div>
     </div>
 
     <footer>
-        <p>Disclaimer: Global Football Hub operates as a static frontend layout indexing open network configuration addresses. No digital media streams are handled locally on our GitHub servers. All code scripts execute client-side window redirection operations securely.</p>
+        <p>Disclaimer: Global Football Hub operates as an open structural informational indexing system processing open network addresses. All visual video streaming protocols rely entirely on remote public domain content delivery nodes. No media properties are handled locally on our GitHub servers.</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <script>
+        var hls = null;
+
+        function loadChannel(m3u8Url) {
+            var video = document.getElementById('football-player');
+            
+            // Clean up old streams before loading new ones
+            if (hls) {
+                hls.destroy();
+            }
+
+            if (Hls.isSupported()) {
+                hls = new Hls();
+                hls.loadSource(m3u8Url);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                    video.play();
+                });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                // Native playback handling for Safari/iOS devices
+                video.src = m3u8Url;
+                video.addEventListener('loadedmetadata', function() {
+                    video.play();
+                });
+            }
+        }
+
+        // Initialize the first feed automatically when page loads
+        window.addEventListener('DOMContentLoaded', function() {
+            loadChannel('https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8');
+        });
+
+        // Monetag Traffic Function
         function triggerAd() {
-            // Your Monetag Direct Link
             let monetagSmartLink = "https://omg10.com/4/11133877"; 
             window.open(monetagSmartLink, '_blank');
         }
